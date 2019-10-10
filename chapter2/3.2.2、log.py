@@ -17,7 +17,7 @@ def log_transform(x,c):
             image[i][j] = map[x[i][j]]
     return image
 if __name__ == '__main__':
-    original = cv2.imread('Fig0305(a)(DFT_no_log).tif',cv2.IMREAD_GRAYSCALE)
+    original = cv2.imread('./image/Fig0305(a)(DFT_no_log).tif',cv2.IMREAD_GRAYSCALE)
 
     cv2.imshow('original',original)
     transform = log(original,1)
