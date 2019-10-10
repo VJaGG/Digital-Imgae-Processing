@@ -13,11 +13,11 @@ def gamma(x,r):
     return image
 if __name__ == '__main__':
 
-    original = cv2.imread('Fig0307(a)(intensity_ramp).tif',cv2.IMREAD_GRAYSCALE)
+    original = cv2.imread('./image/Fig0307(a)(intensity_ramp).tif',cv2.IMREAD_GRAYSCALE)
     cv2.imshow('original',original)
     transform = gamma(original,0.4)
     cv2.imshow('transform',transform)
-    original1 = cv2.imread('Fig0308(a)(fractured_spine).tif',cv2.IMREAD_GRAYSCALE)
+    original1 = cv2.imread('./image/Fig0308(a)(fractured_spine).tif',cv2.IMREAD_GRAYSCALE)
     cv2.imshow('original1',original1)
     transform6 = gamma(original1,0.6)
     cv2.imshow('transform6',transform6)
@@ -26,7 +26,7 @@ if __name__ == '__main__':
     transform3 = gamma(original1,0.3)
     cv2.imshow('transform3',transform3)
 
-    original2 = cv2.imread('Fig0309(a)(washed_out_aerial_image).tif',cv2.IMREAD_GRAYSCALE)
+    original2 = cv2.imread('./image/Fig0309(a)(washed_out_aerial_image).tif',cv2.IMREAD_GRAYSCALE)
     cv2.imshow('original2', original2)
     transform_3 = gamma(original2,3.0)
     transform_4 = gamma(original2,4.0)
