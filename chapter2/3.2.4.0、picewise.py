@@ -1,26 +1,30 @@
 import cv2
 import numpy as np
-def f(x,r1,s1,r2,s2):
-    if r1==r2:
-        if x<r1:
+
+
+def f(x, r1, s1, r2, s2):
+    if r1 == r2:
+        if x < r1:
             return 0
         else:
             return 255
-    if x<=r1:
-        return s1/r1*x
-    elif x>r1 and x<=r2:
+    if x <= r1:
+        return s1 / r1 * x
+    elif x > r1 and x <= r2:
         return s1+(s2-s1)/(r2-r1)*(x-r1)
     else:
         return s2+(255.0-s2)/(255.0-r2)*(x-r2)
-def picewise(x,r1,s1,r2,s2):
+
+
+def picewise(x, r1, s1, r2, s2):
     image = x.copy()
-    height,width = image.shape
+    height, width = image.shape
     map = []
     for i in range(256):
-        map.append(int(f(i,r1,s1,r2,s2)))
+        map.append(int(f(i, r1, s1, r2, s2)))
     for rows in range(height):
         for cols in range(width):
-            image[rows,cols] = map[image[rows,cols]]
+            image[rows, cols] = map[image[rows, cols]]
     print(map)
     return image
 
